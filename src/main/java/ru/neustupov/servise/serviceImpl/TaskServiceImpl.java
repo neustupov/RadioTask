@@ -20,18 +20,22 @@ public class TaskServiceImpl implements TaskService {
         taskDao.add(task);
     }
 
+    @Transactional
     public void edit(Task task) {
         taskDao.edit(task);
     }
 
+    @Transactional
     public void delete(int id) {
         taskDao.delete(id);
     }
 
+    @Transactional
     public Task getTask(int id) {
         return taskDao.getTask(id);
     }
 
+    @Transactional
     public List getAllTasks() {
         return taskDao.getAllTasks();
     }
