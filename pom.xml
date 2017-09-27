@@ -28,6 +28,11 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>3.6.7.Final</version>
         </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>20030825.184428</version>
+        </dependency>
     </dependencies>
 
 </project>
