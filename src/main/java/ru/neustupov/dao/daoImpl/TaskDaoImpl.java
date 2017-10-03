@@ -12,7 +12,7 @@ import java.util.List;
 public class TaskDaoImpl implements TaskDao {
 
     @Autowired
-    SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     public void add(Task task) {
         sessionFactory.getCurrentSession().save(task);
@@ -31,6 +31,6 @@ public class TaskDaoImpl implements TaskDao {
     }
 
     public List getAllTasks() {
-        return sessionFactory.getCurrentSession().createQuery("FROM tasktable").list();
+        return sessionFactory.getCurrentSession().createQuery("FROM Task").list();
     }
 }

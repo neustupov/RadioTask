@@ -252,8 +252,8 @@
                                             <tr>
                                             <tr>
                                                 <td class="font" align="center">
-                                                    <form:label path="modelname">
-                                                        <spring:message text="Modelname:"/>
+                                                    <form:label path="modelsname">
+                                                        <spring:message text="Model name:"/>
                                                     </form:label>
                                                 </td>
                                             </tr>

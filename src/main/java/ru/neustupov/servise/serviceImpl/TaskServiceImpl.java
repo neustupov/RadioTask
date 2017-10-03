@@ -13,7 +13,7 @@ import java.util.List;
 public class TaskServiceImpl implements TaskService {
 
     @Autowired
-    TaskDao taskDao;
+    private TaskDao taskDao;
 
     @Transactional
     public void add(Task task) {
