@@ -206,10 +206,10 @@
                                             <tr class="header" align="center">
                                                 <td class="header" align="center">
                                                     <c:if test="${!empty task.phonenumber}">
-                                                        EDIT TASK
+                                                        ИЗМЕНИТЬ ЗАКАЗ
                                                     </c:if>
                                                     <c:if test="${empty task.phonenumber}">
-                                                        ADD NEW TASK
+                                                        ДОБАВИТЬ ЗАКАЗ
                                                     </c:if>
                                                 </td>
                                             </tr>
@@ -237,13 +237,13 @@
                                             <tr>
                                                 <td class="font" colspan="2" align="center">
                                                     <form:label path="productsname">
-                                                        <spring:message text="Product name:"/>
+                                                        <spring:message text="Наименование:"/>
                                                     </form:label>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="form" colspan="2" align="center">
-                                                    <form:input placeholder="New product name" cssClass="field"
+                                                    <form:input placeholder="Наименование" cssClass="field"
                                                                 path="productsname"/>
                                                 </td>
                                             </tr>
@@ -252,14 +252,14 @@
                                             <tr>
                                                 <td class="font" colspan="2" align="center">
                                                     <form:label path="modelsname">
-                                                        <spring:message text="Model name:"/>
+                                                        <spring:message text="Модель:"/>
                                                     </form:label>
                                                 </td>
                                             </tr>
                                             </tr>
                                             <tr>
                                                 <td class="form" colspan="2" align="center">
-                                                    <form:input placeholder="Enter model name" cssClass="field"
+                                                    <form:input placeholder="Модель" cssClass="field"
                                                                 path="modelsname"/>
                                                 </td>
                                             </tr>
@@ -267,13 +267,13 @@
                                             <tr>
                                                 <td class="font" colspan="2" align="center">
                                                     <form:label path="phonenumber">
-                                                        <spring:message text="Phone Number:"/>
+                                                        <spring:message text="Номер телефона:"/>
                                                     </form:label>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="form" colspan="2" align="center">
-                                                    <form:input placeholder="Enter phone number" cssClass="field"
+                                                    <form:input placeholder="Номер телефона" cssClass="field"
                                                                 path="phonenumber"/>
                                                 </td>
                                             </tr>
@@ -281,25 +281,25 @@
                                             <tr>
                                                 <td class="font" colspan="2" align="center">
                                                     <form:label path="buyersname">
-                                                        <spring:message text="Buyers Name:"/>
+                                                        <spring:message text="ФИО покупателя:"/>
                                                     </form:label>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="form" colspan="2" align="center">
-                                                    <form:input placeholder="Enter buyers name" cssClass="field"
+                                                    <form:input placeholder="ФИО покупателя" cssClass="field"
                                                                 path="buyersname"/>
                                                 </td>
                                             </tr>
                                                 <%--amount--%>
                                             <tr>
-                                                <td class="font">
+                                                <td class="font" valign="center">
                                                     <form:label path="amount">
-                                                        <spring:message text="Amount:"/>
+                                                        <spring:message text="Количество:"/>
                                                     </form:label>
                                                 </td>
-                                                <td class="form">
-                                                    <form:input placeholder="Enter amount" cssClass="field"
+                                                <td class="form" valign="center">
+                                                    <form:input placeholder="Количество" cssClass="field"
                                                                 path="amount"/>
                                                 </td>
                                             </tr>
@@ -307,23 +307,23 @@
                                             <tr>
                                                 <td class="font">
                                                     <form:label path="price">
-                                                        <spring:message text="Price:"/>
+                                                        <spring:message text="Цена:"/>
                                                     </form:label>
                                                 </td>
                                                 <td class="form">
-                                                    <form:input placeholder="Enter price" cssClass="field"
+                                                    <form:input placeholder="Цена" cssClass="field"
                                                                 path="price"/>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td colspan="2" class="form">
-                                                    <c:if test="${empty task.id}">
+                                                    <c:if test="${!empty task.phonenumber}">
                                                         <input class="btn" type="submit"
-                                                               value="<spring:message text="SUBMIT CHANGES"/>"/>
+                                                               value="<spring:message text="ИЗМЕНИТЬ ЗАКАЗ"/>"/>
                                                     </c:if>
-                                                    <c:if test="${!empty task.id}">
+                                                    <c:if test="${empty task.phonenumber}">
                                                         <input class="btn" type="submit"
-                                                               value="<spring:message text="ADD TASK"/>"/>
+                                                               value="<spring:message text="ДОБАВИТЬ ЗАКАЗ"/>"/>
                                                     </c:if>
                                                 </td>
                                             </tr>
@@ -340,9 +340,9 @@
                             <tr>
                                 <td class="form">
                                     <form action="/">
-                                        <input class="field" type="text" placeholder="Min 3 symbols or Blank to reset"
-                                               name="userName"/>
-                                        <input class="btn" type="submit" value="Search"/>
+                                        <input class="field" type="text" placeholder="Мин 3 цифры телефона"
+                                               name="phonenumber"/>
+                                        <input class="btn" type="submit" value="Поиск"/>
                                     </form>
                                 </td>
                             </tr>
@@ -363,20 +363,23 @@
                         <table class="header" align="center">
                             <tr class="header" align="center">
                                 <td class="header" align="center" height="100px">
-                                    TASKS
+                                    ЗАКАЗЫ
                                 </td>
                             </tr>
                         </table>
                         <c:if test="${!empty listTasks}">
                             <table class="tg" align="center" width="100%">
                                 <tr>
-                                    <th width=10%>ID</th>
-                                    <th width=25%>Products name</th>
-                                    <th width=10%>Amount</th>
-                                    <th width=10%>Price</th>
-                                    <th width=30%>Registration / update date</th>
+                                    <th width=5%>ID</th>
+                                    <th width=15%>Наименование</th>
+                                    <th width=10%>Название модели</th>
+                                    <th width=10%>Количество</th>
+                                    <th width=10%>Цена</th>
+                                    <th width=15%>Дата изменения/добавления</th>
+                                    <th width=15%>Телефон</th>
+                                    <th width=15%>ФИО покупателя</th>
                                     <th width=5%></th>
-                                    <th width=10%></th>
+                                    <th width=5%></th>
                                 </tr>
                                 <tr height="10px" bgcolor="#eeeeee">
 
@@ -385,9 +388,12 @@
                                     <tr>
                                         <td align="center">${task.id}</td>
                                         <td align="center">${task.productsname}</td>
+                                        <td align="center">${task.modelsname}</td>
                                         <td align="center">${task.amount}</td>
                                         <td align="center">${task.price}</td>
                                         <td align="center">${task.orderdate}</td>
+                                        <td align="center">${task.phonenumber}</td>
+                                        <td align="center">${task.buyersname}</td>
                                         <td align="center"><a href="<c:url value='/edit/${task.id}'/>"><img
                                                 src="../../resources/pencilcircle.png"></a></td>
                                         <td align="center"><a href="<c:url value='/remove/${task.id}'/>"><img

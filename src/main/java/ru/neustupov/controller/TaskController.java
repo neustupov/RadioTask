@@ -62,7 +62,7 @@ public class TaskController {
             tasks = taskService.getAllTasks();
         } else {
             List<Task> tempTasks = taskService.getAllTasks();
-            tasks = new ArrayList<Task>();
+            tasks = new ArrayList<>();
             for (Task tempTask : tempTasks) {
                 if (tempTask.getPhonenumber().contains(taskPhoneNumber)) {
                     System.out.println("filter: " + tempTask);
@@ -70,7 +70,7 @@ public class TaskController {
                 }
             }
         }
-        PagedListHolder<Task> pagedListHolder = new PagedListHolder<Task>(tasks);
+        PagedListHolder<Task> pagedListHolder = new PagedListHolder<>(tasks);
         pagedListHolder.setPageSize(7);
         modelAndView.addObject("maxPages", pagedListHolder.getPageCount());
 
