@@ -64,7 +64,7 @@ public class TaskController {
             List<Task> tempTasks = taskService.getAllTasks();
             tasks = new ArrayList<Task>();
             for (Task tempTask : tempTasks) {
-                if (tempTask.getPhonenumber().toLowerCase().contains(taskPhoneNumber.toLowerCase())) {
+                if (tempTask.getPhonenumber().contains(taskPhoneNumber)) {
                     System.out.println("filter: " + tempTask);
                     tasks.add(tempTask);
                 }

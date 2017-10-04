@@ -235,7 +235,7 @@
                                             </c:if>
                                                 <%--products name--%>
                                             <tr>
-                                                <td class="font" align="center">
+                                                <td class="font" colspan="2" align="center">
                                                     <form:label path="productsname">
                                                         <spring:message text="Product name:"/>
                                                     </form:label>
@@ -244,14 +244,13 @@
                                             <tr>
                                                 <td class="form" colspan="2" align="center">
                                                     <form:input placeholder="New product name" cssClass="field"
-                                                                width="250px"
                                                                 path="productsname"/>
                                                 </td>
                                             </tr>
                                                 <%--modelname--%>
                                             <tr>
                                             <tr>
-                                                <td class="font" align="center">
+                                                <td class="font" colspan="2" align="center">
                                                     <form:label path="modelsname">
                                                         <spring:message text="Model name:"/>
                                                     </form:label>
@@ -259,9 +258,37 @@
                                             </tr>
                                             </tr>
                                             <tr>
-                                                <td class="form" colspan="2">
+                                                <td class="form" colspan="2" align="center">
                                                     <form:input placeholder="Enter model name" cssClass="field"
                                                                 path="modelsname"/>
+                                                </td>
+                                            </tr>
+                                                <%--phoneNumber--%>
+                                            <tr>
+                                                <td class="font" colspan="2" align="center">
+                                                    <form:label path="phonenumber">
+                                                        <spring:message text="Phone Number:"/>
+                                                    </form:label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="form" colspan="2" align="center">
+                                                    <form:input placeholder="Enter phone number" cssClass="field"
+                                                                path="phonenumber"/>
+                                                </td>
+                                            </tr>
+                                                <%--buyersName--%>
+                                            <tr>
+                                                <td class="font" colspan="2" align="center">
+                                                    <form:label path="buyersname">
+                                                        <spring:message text="Buyers Name:"/>
+                                                    </form:label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="form" colspan="2" align="center">
+                                                    <form:input placeholder="Enter buyers name" cssClass="field"
+                                                                path="buyersname"/>
                                                 </td>
                                             </tr>
                                                 <%--amount--%>
@@ -271,7 +298,7 @@
                                                         <spring:message text="Amount:"/>
                                                     </form:label>
                                                 </td>
-                                                <td class="form" colspan="2">
+                                                <td class="form">
                                                     <form:input placeholder="Enter amount" cssClass="field"
                                                                 path="amount"/>
                                                 </td>
@@ -283,42 +310,18 @@
                                                         <spring:message text="Price:"/>
                                                     </form:label>
                                                 </td>
-                                                <td class="form" colspan="2">
+                                                <td class="form">
                                                     <form:input placeholder="Enter price" cssClass="field"
                                                                 path="price"/>
                                                 </td>
                                             </tr>
-                                                <%--phoneNumber--%>
-                                            <tr>
-                                                <td class="font">
-                                                    <form:label path="phonenumber">
-                                                        <spring:message text="Phone Number:"/>
-                                                    </form:label>
-                                                </td>
-                                                <td class="form">
-                                                    <form:input placeholder="Enter phone number" cssClass="field"
-                                                                path="phonenumber"/>
-                                                </td>
-                                            </tr>
-                                                <%--buyersName--%>
-                                            <tr>
-                                                <td class="font">
-                                                    <form:label path="buyersname">
-                                                        <spring:message text="Buyers Name:"/>
-                                                    </form:label>
-                                                </td>
-                                                <td class="form" colspan="2">
-                                                    <form:input placeholder="Enter buyers name" cssClass="field"
-                                                                path="buyersname"/>
-                                                </td>
-                                            </tr>
                                             <tr>
                                                 <td colspan="2" class="form">
-                                                    <c:if test="${!empty task.id}">
+                                                    <c:if test="${empty task.id}">
                                                         <input class="btn" type="submit"
                                                                value="<spring:message text="SUBMIT CHANGES"/>"/>
                                                     </c:if>
-                                                    <c:if test="${empty task.id}">
+                                                    <c:if test="${!empty task.id}">
                                                         <input class="btn" type="submit"
                                                                value="<spring:message text="ADD TASK"/>"/>
                                                     </c:if>
