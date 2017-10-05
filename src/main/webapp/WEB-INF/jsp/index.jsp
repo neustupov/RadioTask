@@ -187,7 +187,13 @@
 
             <table class="header" align="center">
                 <tr class="header" align="center">
-                    <td class="header" align="center" height="100px">
+                    <td class="header" align="center">
+                        <c:if test="${!empty task.phonenumber}">
+                            ИЗМЕНИТЬ ЗАКАЗ
+                        </c:if>
+                        <c:if test="${empty task.phonenumber}">
+                            ДОБАВИТЬ ЗАКАЗ
+                        </c:if>
                     </td>
                 </tr>
             </table>
@@ -200,22 +206,6 @@
                         <form:form action="${addAction}" commandName="task">
                             <%--Add form--%>
                             <table class="form" align="center" width="100%">
-                                <tr>
-                                    <td>
-                                        <table class="header" align="center">
-                                            <tr class="header" align="center">
-                                                <td class="header" align="center">
-                                                    <c:if test="${!empty task.phonenumber}">
-                                                        ИЗМЕНИТЬ ЗАКАЗ
-                                                    </c:if>
-                                                    <c:if test="${empty task.phonenumber}">
-                                                        ДОБАВИТЬ ЗАКАЗ
-                                                    </c:if>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
                                 <tr>
                                     <td>
                                         <table width="100%">
@@ -362,7 +352,7 @@
                     <td>
                         <table class="header" align="center">
                             <tr class="header" align="center">
-                                <td class="header" align="center" height="100px">
+                                <td class="header" align="center">
                                     ЗАКАЗЫ
                                 </td>
                             </tr>
@@ -416,7 +406,7 @@
                                         <c:param name="page" value="${page-1}"/>
                                     </c:url>
                                     <c:if test="${page > 1}">
-                                        <a href="<c:out value="${prev}" />" class="link">Previous</a>
+                                        <a href="<c:out value="${prev}" />" class="link">Предыдущая</a>
                                     </c:if>
 
                                     <c:forEach begin="1" end="${maxPages}" step="1" varStatus="i">
@@ -436,7 +426,7 @@
                                         <c:param name="page" value="${page + 1}"/>
                                     </c:url>
                                     <c:if test="${page + 1 <= maxPages}">
-                                        <a href='<c:out value="${next}" />' class="link">Next</a>
+                                        <a href='<c:out value="${next}" />' class="link">Следующая</a>
                                     </c:if>
                                 </td>
                             </tr>
